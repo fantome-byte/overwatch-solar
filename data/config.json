@@ -1,0 +1,63 @@
+{
+    "plants": [
+        {
+            "id": "PLT-001",
+            "name": "CIZO",
+            "location": "Atakpamé"
+        }
+    ],
+    "inverters": [
+        {
+            "id": "INV-001",
+            "name": "Onduleur Principal",
+            "output_power": 5000,
+            "min_pv_voltage": 360,
+            "max_pv_voltage": 700,
+            "min_operating_temperature": 25,
+            "max_operating_temperature": 41,
+            "strings": [
+                "STR-001"
+            ]
+        }
+    ],
+    "strings": [
+        {
+            "id": "STR-001",
+            "power_wc": 360,
+            "pv_voltage": 36,
+            "fabricant": "Risen",
+            "quantity": 8,
+            "inverter": "Onduleur Principal"
+        }
+    ],
+    "sensors": [
+        {
+            "id": "SEN-001",
+            "type": "DCVoltageSensor",
+            "name": "Capteur Tension DC",
+            "min_threshold": 360,
+            "max_threshold": 700
+        },
+        {
+            "id": "SEN-002",
+            "type": "ACVoltageSensor",
+            "name": "Capteur Tension AC",
+            "min_threshold": 218,
+            "max_threshold": 240
+        },
+        {
+            "id": "SEN-003",
+            "type": "CurrentSensor",
+            "name": "Capteur de courant",
+            "min_threshold": 5,
+            "max_threshold": 100
+        },
+        {
+            "id": "SEN-004",
+            "type": "TemperatureSensor",
+            "name": "Capteur de temperature",
+            "min_threshold": 20,
+            "max_threshold": 60
+        }
+    ]
+}
