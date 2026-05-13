@@ -1,5 +1,5 @@
 # overwatch-solar
-Overwatcch - Solar est un projet académique de programmation orientée objet en Python. Il s'agit d'un prototype de supervision et de maintenance d'une centrale photovoltaïque, capable de modéliser des équipements, de simuler des mesures et de générer des tickets de maintenance.
+Overwatch - Solar est un projet académique de programmation orientée objet en Python. Il s'agit d'un prototype de supervision et de maintenance d'une centrale photovoltaïque, capable de modéliser des équipements, de simuler des mesures et de générer des tickets de maintenance.
 
 Le projet est organisé en modules distincts :
 
