@@ -1,0 +1,55 @@
+{
+    "counter": 5,
+    "tickets": [
+        {
+            "ticket_id": "TKT-001",
+            "equipment_id": "INV-001",
+            "equipment_name": "Onduleur Principal",
+            "type_defaut": "temperature",
+            "description": "Temperature trop elevee",
+            "statut": "Cloture",
+            "date_creation": "2026-05-11 11:43:31",
+            "date_cloture": "2026-05-12 06:59:53"
+        },
+        {
+            "ticket_id": "TKT-002",
+            "equipment_id": "SEN-002",
+            "equipment_name": "Capteur Tension AC",
+            "type_defaut": "valeur",
+            "description": "Valeur en dessous du seuil minimum",
+            "statut": "Ouvert",
+            "date_creation": "2026-05-11 11:43:31",
+            "date_cloture": null
+        },
+        {
+            "ticket_id": "TKT-003",
+            "equipment_id": "SEN-004",
+            "equipment_name": "Capteur de temperature",
+            "type_defaut": "valeur",
+            "description": "Valeur au dessus du seuil maximum",
+            "statut": "Ouvert",
+            "date_creation": "2026-05-11 11:43:31",
+            "date_cloture": null
+        },
+        {
+            "ticket_id": "TKT-004",
+            "equipment_id": "INV-001",
+            "equipment_name": "Onduleur Principal",
+            "type_defaut": "temperature",
+            "description": "Temperature trop elevee",
+            "statut": "Ouvert",
+            "date_creation": "2026-05-11 11:43:31",
+            "date_cloture": null
+        },
+        {
+            "ticket_id": "TKT-005",
+            "equipment_id": "SEN-003",
+            "equipment_name": "Capteur de courant",
+            "type_defaut": "valeur",
+            "description": "Valeur en dessous du seuil minimum",
+            "statut": "Ouvert",
+            "date_creation": "2026-05-11 11:44:17",
+            "date_cloture": null
+        }
+    ]
+}

@@ -1,0 +1,33 @@
+INV-001 : String STR-001 connecte
+Onduleur INV-001 ajoute au parc Personal
+Capteur SEN-001 ajoute au parc Personal
+Capteur SEN-002 ajoute au parc Personal
+Capteur SEN-003 ajoute au parc Personal
+Capteur SEN-004 ajoute au parc Personal
+{'id': 'PLT001', 'name': 'Personal', 'location': 'Lome', 'inverters': [
+        {'id': 'INV-001', 'name': 'Personal', 'status': 'warning', 'output_power': 5000, 'min_pv_voltage': 360, 'max_pv_voltage': 750, 'min_operating_temperature': 25, 'max_operating_temperature': 41, 'panels_connected': [
+                {'id': 'STR-001', 'power_wc': 600, 'fabricant': 'Risen', 'string_voltage': 288, 'quantity': 8, 'total_power': 4800
+                }
+            ], 'current_temperature': 25.0, 'current_pv_voltage': 0.0, 'current_output_power': 0.0
+        }
+    ], 'sensors': [
+        {'id': 'SEN-001', 'name': 'ACSensor1', 'status': 'warning', 'min_threshold': 218, 'max_threshold': 240, 'current_value': 0.0, 'unit': 'V', 'type': 'AC'
+        },
+        {'id': 'SEN-002', 'name': 'DCSensor', 'status': 'warning', 'min_threshold': 20, 'max_threshold': 100, 'current_value': 0.0, 'unit': 'V', 'type': 'DC'
+        },
+        {'id': 'SEN-003', 'name': 'CurrentSensor', 'status': 'warning', 'min_threshold': 5, 'max_threshold': 100, 'current_value': 0.0, 'unit': 'A'
+        },
+        {'id': 'SEN-004', 'name': 'TempSensor', 'status': 'nominal', 'min_threshold': 20, 'max_threshold': 60, 'current_value': 25.0, 'unit': '°C'
+        }
+    ], 'total_installed_power': 4800
+}
+Tickets : [
+    {'ticket_id': 'TKT-001', 'equipment_id': 'INV-001', 'equipment_name': 'Personal', 'type_defaut': 'pv_voltage', 'description': 'Sous-tension', 'statut': 'Ouvert', 'date_creation': '2026-03-26 00: 28: 00', 'date_cloture': None
+    },
+    {'ticket_id': 'TKT-002', 'equipment_id': 'SEN-001', 'equipment_name': 'ACSensor1', 'type_defaut': 'valeur', 'description': 'Valeur en dessous du seuil minimum', 'statut': 'Ouvert', 'date_creation': '2026-03-26 00: 28: 00', 'date_cloture': None
+    },
+    {'ticket_id': 'TKT-003', 'equipment_id': 'SEN-002', 'equipment_name': 'DCSensor', 'type_defaut': 'valeur', 'description': 'Valeur en dessous du seuil minimum', 'statut': 'Ouvert', 'date_creation': '2026-03-26 00: 28: 00', 'date_cloture': None
+    },
+    {'ticket_id': 'TKT-004', 'equipment_id': 'SEN-003', 'equipment_name': 'CurrentSensor', 'type_defaut': 'valeur', 'description': 'Valeur en dessous du seuil minimum', 'statut': 'Ouvert', 'date_creation': '2026-03-26 00: 28: 00', 'date_cloture': None
+    }
+]

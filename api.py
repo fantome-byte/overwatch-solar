@@ -16,7 +16,13 @@ class Api:
         self._verifier_fichiers()
         self._plant = self._initialiser_centrale()
         self._manager = MaintenanceManager(self._plant)
-        self._manager._tickets = self._charger_tickets()
+        tickets_data = self._charger_tickets()
+        if isinstance(tickets_data, list):
+            self._manager._tickets = tickets_data
+            MaintenanceManager._counter = max([int(t['ticket_id'].split('-')[1]) for t in tickets_data], default=0)
+        else:
+            self._manager._tickets = tickets_data["tickets"]
+            MaintenanceManager._counter = tickets_data["counter"]
         self._sauvegarder_config()
     
     def _verifier_fichiers(self):
@@ -26,7 +32,7 @@ class Api:
 
         if not _TICKETS_FILE.exists() or _TICKETS_FILE.stat().st_size == 0:
             with open(_TICKETS_FILE, 'w', encoding='utf-8') as f:
-                json.dump([], f)
+                json.dump({"counter": 0, "tickets": []}, f)
             print("Fiche tickets.json crée")
         
         if not _CONFIG_FILE.exists():
@@ -91,13 +97,17 @@ class Api:
         with open(_TICKETS_FILE, 'r', encoding='utf-8') as f:
             contenu = f.read()
             if not contenu.strip():
-                return []
+                return {"counter": 0, "tickets": []}
             return json.loads(contenu)
         
     
     def _sauvegarder_tickets(self):
+        data = {
+            "counter": MaintenanceManager._counter,
+            "tickets": self._manager._tickets
+        }
         with open(_TICKETS_FILE, 'w', encoding='utf-8') as f:
-            json.dump(self._manager._tickets, f, indent = 4, ensure_ascii = False)
+            json.dump(data, f, indent=4, ensure_ascii=False)
     
     def _construire_config(self):
         """Construit proprement le contenu du fichier config.json"""
@@ -151,7 +161,7 @@ class Api:
             json.dump(self._construire_config(), f, indent = 4, ensure_ascii=False)
         
     
-    # Méthodes exposées au JS :
+    # Méthodes exposées au JS
     def run_simulation(self):
         result = self._manager.run()
         self._sauvegarder_tickets()
@@ -165,10 +175,8 @@ class Api:
         self._sauvegarder_tickets()
         return result   
     
-    def ajouter_inverter(self):
-        """Methode à completer pour prendre en compte plusieurs onduleurs dans une installation"""
-        pass    
-    
     def get_plant_info(self):
-        # self, name, output_power, min_pv_voltage, max_pv_voltage, min_temp, max_temp
         return self._plant.to_dict()
+    
+    def get_alerts(self):
+        return self._manager.get_alerts()

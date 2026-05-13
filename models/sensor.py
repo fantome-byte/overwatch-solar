@@ -42,7 +42,8 @@ class Sensor(Equipment):
             'min_threshold': self.min_threshold,
             'max_threshold': self.max_threshold,
             'current_value': self._current_value,
-            'unit': getattr(self, 'unit', None)
+            'unit': getattr(self, 'unit', None),
+            'type': type(self).__name__
         })
         return data
     
