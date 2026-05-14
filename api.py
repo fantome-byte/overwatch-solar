@@ -27,7 +27,6 @@ class Api:
     
     def _verifier_fichiers(self):
         """Vérifie et crée les fichiers/dossiers obligatoires"""
-        # Créer le dossier data/ s'il n'existe pas
         _DATA_DIR.mkdir(parents=True, exist_ok=True)
 
         if not _TICKETS_FILE.exists() or _TICKETS_FILE.stat().st_size == 0:
